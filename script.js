@@ -34,9 +34,9 @@
       summary: "Research, ideation, requirement gathering, and project planning.",
       details: "Conducted market research and competitive analysis. We defined our target audience and started drafting initial user personas to guide our design decisions.",
       images: [
-        { src: "week2-1.webp", alt: "Desk Setup" },
-        { src: "week2-2.webp", alt: "Git Config" },
-        { src: "week2-3.webp", alt: "Notion Board" }
+        { src: "Week2-1.webp", alt: "Desk Setup" },
+        { src: "Week2-2.webp", alt: "Git Config" },
+        { src: "Week2-3.webp", alt: "Notion Board" }
       ]
     },
     {
