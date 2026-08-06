@@ -19,216 +19,211 @@
 
 (function(){
   const weeksData = [
+   {
+  title: "Week 0 — ProtoSem Orientation & Team Building",
+
+  summary: "Participated in the Professional Semester orientation program, team-building activities, and the 16 Personalities Assessment, building a strong foundation for collaboration and professional growth.",
+
+  details: `Week 0 marked the beginning of my Professional Semester journey. During the orientation, I gained a clear understanding of the objectives, structure, and expectations of the program. I actively participated in interactive team-building activities that strengthened my communication and collaboration skills while helping me connect with my peers. One of the highlights of the week was completing the 16 Personalities Assessment, where I discovered my personality type as Advocate (INFJ), providing valuable insights into my strengths, work style, and approach to teamwork. This week emphasized the importance of professional development, self-awareness, leadership, and effective communication, laying a strong foundation for the learning experiences that would follow throughout the semester.`,
+
+  images: [
+    { src: "week1-1.png", alt: "ProtoSem Orientation" },
+    { src: "week1-2.png", alt: "Team Building Activity" },
+    { src: "week1-3.png", alt: "16 Personalities Assessment" }
+  ]
+},
     {
-      title: "Week 0 — Orientation",
-      summary: "Getting started, understanding objectives, planning the semester, and setting up the development environment.",
-      details: "This week focused on environment setup. Installed Node.js, configured Git repositories, and set up our primary project management boards in Notion to track our 20-week sprint.",
+  title: "Week 1 — 5S Workplace Methodology",
+
+  summary: "Learned and implemented the 5S Workplace Methodology through Cable Management and Desoldering activities, gaining practical engineering experience in workplace organization and electronics handling.",
+
+  details: `Week 1 introduced me to the practical implementation of the 5S Workplace Methodology, highlighting the importance of workplace organization, efficiency, and safety. I initially worked as a member of the Cable Management Team, where I organized and managed cables systematically to maintain a clean and efficient workspace. Later, I participated in Desoldering Works, carefully removing electronic components from circuit boards while following proper handling procedures. These hands-on activities enhanced my teamwork, communication, attention to detail, and responsibility. The experience also strengthened my understanding of organized engineering workflows and demonstrated how systematic work practices improve productivity and reduce errors in practical environments.`,
+
+  images: [
+    { src: "week2-1.png", alt: "Cable Management" },
+    { src: "week2-2.png", alt: "Desoldering Work" },
+    { src: "week2-3.png", alt: "5S Workplace Implementation" }
+  ]
+},
+   {
+  title: "Week 2 — Smart Attendance, Python & Creative Problem Solving",
+
+  summary: "Researched and planned a Smart Attendance System using MIT App Inventor, developed an interactive story in Scratch, strengthened Python and OOP fundamentals, and solved five Vibe Coding episodes to enhance logical thinking.",
+
+  details: `Week 2 focused on strengthening both technical and creative problem-solving skills through multiple learning activities. I researched and planned the architecture of a Smart Attendance System using MIT App Inventor, exploring how mobile applications can integrate attendance tracking with a simple and user-friendly interface. Alongside this, I designed and developed an interactive story using Scratch, which improved my understanding of logical flow, event-driven programming, and visual storytelling.
+
+I also completed the fundamentals of Python programming, covering variables, data types, loops, functions, and problem-solving techniques before moving into the basics of Object-Oriented Programming (OOP), including classes, objects, inheritance, encapsulation, and code reusability. To further improve my analytical thinking and debugging skills, I successfully solved five Vibe Coding episodes that challenged me to approach programming problems with structured logic and creative solutions. Overall, this week enhanced my programming fundamentals, application design skills, computational thinking, and confidence in solving real-world technical challenges.`,
+
+  images: [
+    { src: "week3-1.png", alt: "Smart Attendance using MIT App Inventor" },
+    { src: "week3-2.png", alt: "Interactive Story Developed in Scratch" },
+    { src: "week3-3.png", alt: "Python Learning and Vibe Coding Practice" }
+  ]
+},
+    {
+      title: "Week 3 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: "week1-1.png", alt: "Desk Setup" },
-        { src: "week1-2.png", alt: "Git Config" },
-        { src: "week1-3.png", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
     },
-    {
-      title: "Week 1 — Foundation",
-      summary: "Research, ideation, requirement gathering, and project planning.",
-      details: "Conducted market research and competitive analysis. We defined our target audience and started drafting initial user personas to guide our design decisions.",
+     {
+      title: "week 4 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: "week2-1.webp", alt: "Desk Setup" },
-        { src: "week2-2.webp", alt: "Git Config" },
-        { src: "week2-3.webp", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 2 — Design Thinking",
-      summary: "User research, wireframing, brainstorming, and UX analysis.",
-      details: "Moved from theory into Figma. Created low-fidelity wireframes and mapped out the core user journey to ensure a frictionless navigation experience.",
+    }, {
+      title: "week 5 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 3 — UI Design",
-      summary: "High-fidelity interface design and component creation.",
-      details: "Established our design system. Built out typography scales, color palettes, and a reusable component library in Figma to ensure consistency.",
+    }, {
+      title: "week 6 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 4 — Frontend Development",
-      summary: "Building responsive layouts and reusable UI components.",
-      details: "Bootstrapped the React application. Translated Figma components into JSX and set up a mobile-first responsive grid using modern CSS.",
-     images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
-      ]
-    },
-    {
-      title: "Week 5 — Backend Integration",
-      summary: "API integration, authentication, and server communication.",
-      details: "Initialized the Node.js/Express server. Set up routing, middleware, and created our first RESTful API endpoints to serve mock data to the frontend.",
+    }, {
+      title: "week 7 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 6 — Database",
-      summary: "Data modelling, CRUD operations, and database optimization.",
-      details: "Configured MongoDB and Mongoose. Designed the database schemas, established relationships, and wrote the logic for full CRUD operations.",
+    }, {
+      title: "week 8 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 7 — Testing",
-      summary: "Debugging, usability testing, and fixing issues.",
-      details: "Implemented unit tests using Jest. Squashed early bugs, improved error handling on the server, and ran basic usability tests on the frontend.",
+    }, {
+      title: "week 9 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 8 — Deployment",
-      summary: "Hosting applications and deployment workflow.",
-      details: "Set up CI/CD pipelines. Deployed the backend to Render/AWS and the frontend to Vercel, ensuring environment variables were securely configured.",
+    }, {
+      title: "week 10 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 9 — Optimization",
-      summary: "Performance optimization and accessibility improvements.",
-      details: "Ran Lighthouse audits. Optimized image assets, implemented lazy loading, and ensured all semantic HTML met WCAG accessibility standards.",
+    }, {
+      title: "week 11 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 10 — Refinement",
-      summary: "UI refinement and animation enhancements.",
-      details: "Added polish to the user interface. Implemented smooth CSS transitions, hover states, and micro-interactions to make the app feel alive.",
+    }, {
+      title: "week 12 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 11 — Architecture",
-      summary: "Advanced JavaScript concepts and reusable architecture.",
-      details: "Refactored codebase for scalability. Implemented global state management using React Context API to avoid prop drilling in deeply nested components.",
+    }, {
+      title: "week 13 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 12 — Documentation",
-      summary: "Project documentation and presentation preparation.",
-      details: "Wrote comprehensive READMEs, documented API endpoints with Swagger, and started outlining the slides for our mid-semester presentation.",
+    }, {
+      title: "week 14 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 13 — Feedback",
-      summary: "Client feedback implementation and improvements.",
-      details: "Gathered feedback from peer reviews and stakeholders. Pivoted slightly on the dashboard layout based on direct user input.",
+    }, {
+      title: "week 15 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 14 — Code Quality",
-      summary: "Code optimization and responsive testing.",
-      details: "Enforced strict ESLint rules and Prettier formatting. Conducted thorough cross-browser testing on Safari, Chrome, and Firefox.",
+    }, {
+      title: "week 16 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 15 — Security",
-      summary: "Security improvements and production readiness.",
-      details: "Secured our routes. Implemented JWT authentication, bcrypt password hashing, and added Helmet.js to protect against common web vulnerabilities.",
+    }, {
+      title: "week 17 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 16 — Enhancements",
-      summary: "Feature enhancements and polishing.",
-      details: "Developed stretch goals including a dark mode toggle and an integrated chatbot feature to assist users navigating the platform.",
+    }, {
+      title: "week 18 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 17 — QA",
-      summary: "Final UI improvements and quality assurance.",
-      details: "End-to-End (E2E) testing utilizing Cypress. Simulated real user journeys to ensure the critical paths (signup, checkout) never break.",
+    }, {
+      title: "week 19 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
-    },
-    {
-      title: "Week 18 — Portfolio",
-      summary: "Portfolio updates and documentation.",
-      details: "Began compiling the case study. Photographed the final application screens, wrote the narrative of our challenges, and updated personal portfolios.",
-     images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
-      ]
-    },
-    {
-      title: "Week 19 — Review",
-      summary: "Final review and project showcase preparation.",
-      details: "Dry runs for the final presentation. Practiced pacing, finalized the demo scripts, and double-checked the live production servers.",
+    }, {
+      title: "week 20 — In Progress",
+      summary: "",
+      details: "",
       images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
+        { src: " ", alt: "" },
+        { src: " ", alt: "" },
+        { src: " ", alt: "" }
       ]
     },
-    {
-      title: "Week 20 — Completion",
-      summary: "Professional presentation, deployment, and reflection on the overall journey.",
-      details: "Showcase day! Presented the final build to the panel, reflected on the 20-week journey, and officially graduated the Professional Semester.",
-      images: [
-        { src: " ", alt: "Desk Setup" },
-        { src: " ", alt: "Git Config" },
-        { src: " ", alt: "Notion Board" }
-      ]
-    }
   ];
 
   const container = document.getElementById("timeline");
