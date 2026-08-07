@@ -20,7 +20,7 @@
 (function(){
   const weeksData = [
    {
-  title: "Week 0 — ProtoSem Orientation & Team Building",
+  title: " Week 0 — ProtoSem Orientation & Team Building",
 
   summary: "Participated in the Professional Semester orientation program, team-building activities, and the 16 Personalities Assessment, building a strong foundation for collaboration and professional growth.",
 
