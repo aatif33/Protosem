@@ -59,17 +59,28 @@ I also completed the fundamentals of Python programming, covering variables, dat
     { src: "week3-2.png", alt: "Interactive Story Developed in Scratch" },
     { src: "week3-3.png", alt: "Python Learning and Vibe Coding Practice" }
   ]
+},{
+  title: "Week 3 — First Step into 3D Modelling with Fusion 360",
+
+  summary: "Explored 3D modelling with Fusion 360 through hands-on CAD activities, including image-based part modelling, digital recreation of a clay model, and rocket modelling.",
+
+  details: `Week 3 was my first hands-on experience with 3D modelling, and Fusion 360 became the main focus of the week. I began by learning the fundamentals of CAD and understanding how physical ideas and objects can be translated into digital 3D models.
+
+One of the key activities was part modelling based on a reference image. I had to study the object's shape, dimensions, and features before developing the model step by step using sketches and 3D modelling tools. This helped me understand that CAD modelling is not simply about creating a visually similar object, but also about planning the geometry and construction of each feature.
+
+I also worked on recreating a physical clay model digitally. This activity challenged me to carefully observe curves, proportions, surfaces, and overall form before translating them into a digital model. It gave me a different perspective on how real-world objects can be represented using CAD.
+
+Another activity involved rocket modelling in Fusion 360, where I explored how a simple concept could be developed into a structured 3D model. Throughout these activities, I experimented with different approaches, corrected mistakes, modified features, and learned through iteration.
+
+The biggest takeaway from this week was that 3D modelling is not only about learning software tools. It requires observation, spatial thinking, structural planning, and the ability to transform an idea into a digital representation. This experience gave me a strong starting point in CAD and 3D modelling and motivated me to explore more complex designs and engineering applications in the future.`,
+
+  images: [
+    { src: "week4-1.png", alt: "Fusion 360 3D Modelling" },
+    { src: "week4-2.png", alt: "Clay Model Recreation in Fusion 360" },
+    { src: "week4-3.png", alt: "Rocket Modelling in Fusion 360" },
+    { src: "week4-4.png", alt: "Rocket Modelling in Fusion 360" }
+  ]
 },
-    {
-      title: "Week 3 — In Progress",
-      summary: "",
-      details: "",
-      images: [
-        { src: " ", alt: "" },
-        { src: " ", alt: "" },
-        { src: " ", alt: "" }
-      ]
-    },
      {
       title: "week 4 — In Progress",
       summary: "",
