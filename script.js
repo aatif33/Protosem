@@ -60,25 +60,30 @@ I also completed the fundamentals of Python programming, covering variables, dat
     { src: "week3-3.png", alt: "Python Learning and Vibe Coding Practice" }
   ]
 },{
-  title: "Week 3 — First Step into 3D Modelling with Fusion 360",
+  title: "Week 3 — 3D Modelling, Electronics & Hands-On Exploration",
 
-  summary: "Explored 3D modelling with Fusion 360 through hands-on CAD activities, including image-based part modelling, digital recreation of a clay model, and rocket modelling.",
+  summary: "Explored 3D modelling with Fusion 360 while also gaining hands-on exposure to basic electronics, electronic components, and practical experimentation.",
 
-  details: `Week 3 was my first hands-on experience with 3D modelling, and Fusion 360 became the main focus of the week. I began by learning the fundamentals of CAD and understanding how physical ideas and objects can be translated into digital 3D models.
+  details: `Week 3 was a hands-on exploration of both digital design and basic electronics. I began my first serious experience with 3D modelling using Fusion 360, where I learned how physical ideas and objects can be converted into structured digital models.
 
-One of the key activities was part modelling based on a reference image. I had to study the object's shape, dimensions, and features before developing the model step by step using sketches and 3D modelling tools. This helped me understand that CAD modelling is not simply about creating a visually similar object, but also about planning the geometry and construction of each feature.
+One of the major activities was part modelling based on a reference image. I studied the object's shape and features before building it step by step using sketches and 3D modelling tools. I also recreated the form of a physical clay model digitally, which helped me understand proportions, curves, surfaces, and the importance of observation when creating a 3D model.
 
-I also worked on recreating a physical clay model digitally. This activity challenged me to carefully observe curves, proportions, surfaces, and overall form before translating them into a digital model. It gave me a different perspective on how real-world objects can be represented using CAD.
+Another interesting activity was rocket modelling in Fusion 360. Working on the rocket helped me explore how a simple concept can gradually be developed into a structured 3D design. Throughout the modelling activities, I experimented with different tools, corrected mistakes, modified features, and learned through iteration.
 
-Another activity involved rocket modelling in Fusion 360, where I explored how a simple concept could be developed into a structured 3D model. Throughout these activities, I experimented with different approaches, corrected mistakes, modified features, and learned through iteration.
+Alongside CAD modelling, I was introduced to the basics of electronics and got the opportunity to explore different electronic components through hands-on experimentation. Understanding components beyond just their names gave me a better appreciation of how individual parts contribute to an electronic system.
 
-The biggest takeaway from this week was that 3D modelling is not only about learning software tools. It requires observation, spatial thinking, structural planning, and the ability to transform an idea into a digital representation. This experience gave me a strong starting point in CAD and 3D modelling and motivated me to explore more complex designs and engineering applications in the future.`,
+One of the memorable practical experiences was experimenting with a capacitor. During the activity, I ended up damaging/bursting a capacitor, which became an unexpected but valuable learning experience. It reinforced the importance of understanding component characteristics, handling electronic components carefully, and following proper safety practices while experimenting with hardware.
+
+This week taught me that engineering is a combination of designing, experimenting, observing, and learning from mistakes. Fusion 360 introduced me to the digital side of product and component design, while the electronics activities gave me practical exposure to physical hardware.
+
+Overall, Week 3 gave me a broader perspective on engineering by connecting CAD modelling with hands-on electronics. It was a small but important step toward understanding how digital designs and physical components can come together in real-world engineering projects.`,
 
   images: [
     { src: "week4-1.png", alt: "Fusion 360 3D Modelling" },
-    { src: "week4-2.png", alt: "Clay Model Recreation in Fusion 360" },
+    { src: "week4-2.png", alt: "Electronics Components and Practical Experimentation" },
     { src: "week4-3.png", alt: "Rocket Modelling in Fusion 360" },
-    { src: "week4-4.png", alt: "Rocket Modelling in Fusion 360" }
+    { src: "week4-4.png", alt: "" },
+    { src: "week4-5.png", alt: "" }
   ]
 },
      {
