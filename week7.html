@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Week 7 — IoT, Connectivity & RTOS | Aatif</title>
+
+  <meta name="description" content="Week 7 Professional Semester documentation — ESP32, IoT, Adafruit IO, MQTT, IFTTT, Voice Assistant and RTOS.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #111111;
+      --text: #f5f5f5;
+      --muted: #a5a5a5;
+      --yellow: #f5d90a;
+      --blue: #4d8dff;
+      --coral: #ff6b5f;
+      --border: #2b2b2b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 11, 11, 0.95);
+      border-bottom: 2px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      width: 45px;
+      height: 45px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--yellow);
+      color: #000;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+
+      border: 2px solid #000;
+      box-shadow: 4px 4px 0 #fff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      text-transform: uppercase;
+      transition: 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: var(--yellow);
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 25px 80px;
+    }
+
+    .week-number {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--yellow);
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(45px, 8vw, 90px);
+      line-height: 0.95;
+      max-width: 950px;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 span {
+      color: var(--blue);
+    }
+
+    .hero-description {
+      max-width: 800px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .hero-line {
+      width: 100%;
+      height: 6px;
+      background: var(--yellow);
+      margin-top: 60px;
+    }
+
+    /* MAIN */
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 25px 100px;
+    }
+
+    .section {
+      margin-top: 80px;
+    }
+
+    .section-label {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--yellow);
+      font-size: 13px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(30px, 5vw, 50px);
+      margin-bottom: 25px;
+    }
+
+    .intro {
+      max-width: 900px;
+      color: #cfcfcf;
+      font-size: 17px;
+    }
+
+    /* PROJECT */
+
+    .project {
+      margin-top: 70px;
+      border: 2px solid var(--border);
+      background: var(--card);
+    }
+
+    .project-header {
+      padding: 30px;
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      border-bottom: 2px solid var(--border);
+    }
+
+    .project-number {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--yellow);
+      font-size: 15px;
+    }
+
+    .project-header h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(27px, 4vw, 42px);
+      margin-top: 10px;
+    }
+
+    .project-header p {
+      color: var(--muted);
+      max-width: 700px;
+      margin-top: 12px;
+    }
+
+    .project-body {
+      padding: 35px;
+    }
+
+    /* OBJECTIVE */
+   img { max-width:100%; height:auto; display:block; }
+    .objective {
+      padding: 20px;
+      border-left: 5px solid var(--blue);
+      background: #171717;
+      margin-bottom: 40px;
+    }
+
+    .objective strong {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--blue);
+      margin-bottom: 7px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    /* TAGS */
+
+    .components {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 45px;
+    }
+
+    .tag {
+      border: 1px solid #444;
+      padding: 8px 13px;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+
+      background: #151515;
+    }
+
+    /* STEPS */
+
+    .steps {
+      display: grid;
+      gap: 25px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 20px;
+
+      padding: 25px;
+
+      border: 1px solid #303030;
+      background: #0e0e0e;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--yellow);
+      color: #000;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+    }
+
+    .step h4 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #bcbcbc;
+    }
+
+    /* FLOW */
+
+    .flow {
+      margin: 40px 0;
+      padding: 25px;
+
+      border: 2px dashed #3a3a3a;
+      text-align: center;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 14px;
+
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .flow span {
+      color: var(--yellow);
+    }
+
+    /* RESULT */
+
+    .result {
+      margin-top: 40px;
+      padding: 25px;
+
+      background: var(--blue);
+      color: #000;
+
+      border: 2px solid #000;
+      box-shadow: 7px 7px 0 #fff;
+    }
+
+    .result strong {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    /* RTOS */
+
+    .rtos-box {
+      border: 2px solid var(--coral);
+      padding: 35px;
+      background: #121212;
+    }
+
+    .rtos-box h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .rtos-box p {
+      color: #c5c5c5;
+      margin-bottom: 25px;
+    }
+
+    .rtos-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .rtos-list div {
+      padding: 15px;
+      border: 1px solid #333;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+    }
+
+    /* LEARNINGS */
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .learning {
+      padding: 20px;
+      border: 1px solid #333;
+      background: #111;
+    }
+
+    .learning::before {
+      content: "→";
+      color: var(--yellow);
+      margin-right: 10px;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    /* REFLECTION */
+
+    .reflection {
+      padding: 45px;
+
+      border: 2px solid var(--yellow);
+      background: #111;
+    }
+
+    .reflection h2 {
+      margin-bottom: 20px;
+    }
+
+    .reflection p {
+      color: #c9c9c9;
+      max-width: 900px;
+      font-size: 17px;
+    }
+
+    /* BACK BUTTON */
+
+    .back-section {
+      margin-top: 100px;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 30px;
+    }
+
+    .back-btn {
+      display: inline-block;
+
+      padding: 16px 30px;
+
+      background: var(--yellow);
+      color: #000;
+
+      border: 2px solid #000;
+      box-shadow: 7px 7px 0 #fff;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      font-weight: 600;
+
+      transition: 0.2s;
+    }
+
+    .back-btn:hover {
+      transform: translate(5px, 5px);
+      box-shadow: 2px 2px 0 #fff;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 2px solid var(--border);
+
+      max-width: 1200px;
+      margin: auto;
+
+      padding: 30px 25px;
+
+      display: flex;
+      justify-content: space-between;
+
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #777;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .project-header {
+        display: block;
+      }
+
+      .project-body {
+        padding: 20px;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+
+      .step-number {
+        margin-bottom: 5px;
+      }
+
+      .rtos-list,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reflection {
+        padding: 25px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="week-number">
+      PROTOSEM / WEEK 07
+    </div>
+
+    <h1>
+      IoT, <span>Connectivity</span><br>
+      & RTOS
+    </h1>
+
+    <p class="hero-description">
+      A practical exploration of ESP32-based IoT systems,
+      cloud communication, voice-controlled hardware,
+      and Real-Time Operating System fundamentals.
+    </p>
+
+    <div class="hero-line"></div>
+
+  </header>
+
+
+  <main class="container">
+
+    <!-- OVERVIEW -->
+
+    <section class="section">
+
+      <div class="section-label">
+        00 / Overview
+      </div>
+
+      <h2>From Hardware to Connected Systems</h2>
+
+      <p class="intro">
+        Week 7 focused on understanding how microcontrollers can
+        communicate with web applications, cloud platforms, and
+        external services. Using the ESP32 and Arduino IDE, I worked
+        on three IoT-based tasks that gradually increased in
+        complexity — from controlling an LED through a local web
+        server to controlling it through the cloud and finally using
+        voice commands.
+      </p>
+
+      <div class="flow">
+        <span>LOCAL CONTROL</span>
+        &nbsp;→&nbsp;
+        <span>CLOUD CONNECTIVITY</span>
+        &nbsp;→&nbsp;
+        <span>VOICE CONTROL</span>
+      </div>
+
+    </section>
+
+
+    <!-- PROJECT 01 -->
+
+    <section class="project">
+
+      <div class="project-header">
+
+        <div>
+
+          <div class="project-number">
+            01 / 03
+          </div>
+
+          <h3>
+            ESP32 Web Server
+          </h3>
+
+          <p>
+            Controlling an LED through a web browser using
+            an ESP32-based local web server.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="project-body">
+
+        <div class="objective">
+
+          <strong>Objective</strong>
+
+          <p>
+            Create a web-based control system where an LED
+            connected to the ESP32 can be switched ON and OFF
+            from a browser.
+          </p>
+
+        </div>
+
+
+        <h3>Components Used</h3>
+
+        <div class="components">
+
+          <div class="tag">ESP32</div>
+          <div class="tag">LED</div>
+          <div class="tag">USB Cable</div>
+          <div class="tag">Arduino IDE</div>
+
+        </div>
+
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-number">01</div>
+
+            <div>
+              <h4>Setting Up the Hardware</h4>
+
+              <p>
+                The LED was connected to one of the ESP32's
+                GPIO pins through a resistor to limit the current.
+                The basic connection consisted of the ESP32 GPIO,
+                resistor, LED, and ground.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">02</div>
+
+            <div>
+              <h4>Setting Up Arduino IDE</h4>
+
+              <p>
+                Arduino IDE was configured for ESP32 development.
+                The appropriate ESP32 board and COM port were
+                selected before uploading the program.
+              </p>
+              <img src="/week7/p1/1.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">03</div>
+
+            <div>
+              <h4>Connecting ESP32 to Wi-Fi</h4>
+
+              <p>
+                The Wi-Fi credentials were added to the program.
+                After uploading the code, the ESP32 connected
+                to the network and displayed its assigned IP
+                address through the Serial Monitor.
+              </p>
+              <img src="/week7/p1/2.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">04</div>
+
+            <div>
+              <h4>Creating the Web Interface</h4>
+
+              <p>
+                A simple HTML-based interface was created inside
+                the ESP32 program. The webpage contained controls
+                for switching the LED ON and OFF.
+              </p>
+              <img src="/week7/p1/3.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">05</div>
+
+            <div>
+              <h4>Processing Browser Requests</h4>
+
+              <p>
+                When a button was pressed, the browser sent a
+                request to the ESP32 web server. The ESP32 processed
+                the request and changed the GPIO state accordingly.
+              </p>
+              <img src="/week7/p1/5.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">06</div>
+
+            <div>
+              <h4>Testing the System</h4>
+
+              <p>
+                The ON and OFF commands were tested through the
+                browser and the physical LED response was verified.
+                This also provided practical experience in debugging
+                Wi-Fi and web-server communication.
+              </p>
+              <img src="/week7/p1/7.jpeg">
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="flow">
+
+          BROWSER
+          <span>→</span>
+          WI-FI
+          <span>→</span>
+          ESP32 WEB SERVER
+          <span>→</span>
+          GPIO
+          <span>→</span>
+          LED
+
+        </div>
+
+
+        <div class="result">
+
+          <strong>RESULT</strong>
+
+          Successfully created a basic ESP32 web server
+          that controlled an LED through a browser over Wi-Fi.
+
+        </div>
+        <img src="/week7/p1/6.jpeg">
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECT 02 -->
+
+    <section class="project">
+
+      <div class="project-header">
+
+        <div>
+
+          <div class="project-number">
+            02 / 03
+          </div>
+
+          <h3>
+            ESP32 + Adafruit IO
+          </h3>
+
+          <p>
+            Connecting the ESP32 to a cloud platform and
+            controlling the device using MQTT-based communication.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="project-body">
+
+        <div class="objective">
+
+          <strong>Objective</strong>
+
+          <p>
+            Extend the local ESP32 control system into a
+            cloud-based IoT application using Adafruit IO
+            and MQTT.
+          </p>
+
+
+        </div>
+
+
+        <h3>Technologies Used</h3>
+
+        <div class="components">
+
+          <div class="tag">ESP32</div>
+          <div class="tag">Arduino IDE</div>
+          <div class="tag">Adafruit IO</div>
+          <div class="tag">MQTT</div>
+          <div class="tag">Wi-Fi</div>
+          <div class="tag">LED</div>
+
+        </div>
+
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-number">01</div>
+
+            <div>
+              <h4>Creating the Adafruit IO Account</h4>
+
+              <p>
+                I created an Adafruit IO account and explored
+                its dashboard and cloud-based communication
+                features. Adafruit IO provides feeds that can
+                be used to exchange information between connected
+                devices and the cloud.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">02</div>
+
+            <div>
+              <h4>Creating an IoT Feed</h4>
+
+              <p>
+                A dedicated feed was created for the LED control.
+                The feed acted as a communication channel between
+                the ESP32 and the Adafruit IO cloud platform.
+              </p> <img src="/week7/p2/2.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">03</div>
+
+            <div>
+              <h4>Configuring the ESP32</h4>
+
+              <p>
+                The ESP32 program was configured with the Wi-Fi
+                credentials along with the required Adafruit IO
+                username, key, and feed information.
+              </p> 
+              <img src="/week7/p2/5.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">04</div>
+
+            <div>
+              <h4>Understanding MQTT</h4>
+
+              <p>
+                This activity introduced me to MQTT, a lightweight
+                communication protocol commonly used in IoT
+                applications. I learned the basic concept of
+                publishers, subscribers, and message brokers.
+              </p> <img src="/week7/p2/9.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">05</div>
+
+            <div>
+              <h4>Connecting ESP32 to Adafruit IO</h4>
+
+              <p>
+                After connecting to Wi-Fi, the ESP32 established
+                communication with Adafruit IO. The device could
+                then receive information from the configured feed.
+              </p> <img src="/week7/p2/4.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">06</div>
+
+            <div>
+              <h4>Sending LED Commands</h4>
+
+              <p>
+                When the LED control value was changed through
+                the Adafruit IO interface, the corresponding
+                information was communicated to the ESP32.
+                The ESP32 processed the received value and
+                changed the LED state.
+              </p> <img src="/week7/p2/10.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">07</div>
+
+            <div>
+              <h4>Testing Cloud Communication</h4>
+
+              <p>
+                I tested the communication by changing the LED
+                control value through the Adafruit IO dashboard
+                and checking whether the ESP32 received and
+                processed the command correctly.
+              </p> <img src="/week7/p2/11.png">
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="flow">
+
+          ADAFRUIT IO
+          <span>→</span>
+          MQTT
+          <span>→</span>
+          ESP32
+          <span>→</span>
+          GPIO
+          <span>→</span>
+          LED
+
+        </div>
+
+
+        <div class="result">
+
+          <strong>RESULT</strong>
+
+          Successfully connected the ESP32 to Adafruit IO
+          using MQTT and used cloud-based communication
+          for LED control.
+          <img src="week7/p2/7.jpeg">
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECT 03 -->
+
+    <section class="project">
+
+      <div class="project-header">
+
+        <div>
+
+          <div class="project-number">
+            03 / 03
+          </div>
+
+          <h3>
+            ESP32 + Voice Assistant + IFTTT
+          </h3>
+
+          <p>
+            Connecting voice commands to physical hardware
+            using IFTTT and web requests.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="project-body">
+
+        <div class="objective">
+
+          <strong>Objective</strong>
+
+          <p>
+            Build a voice-controlled IoT system where a voice
+            command triggers an action on an LED connected
+            to the ESP32.
+          </p>
+
+        </div>
+
+
+        <h3>Technologies Used</h3>
+
+        <div class="components">
+
+          <div class="tag">ESP32</div>
+          <div class="tag">Arduino IDE</div>
+          <div class="tag">IFTTT</div>
+          <div class="tag">Voice Assistant</div>
+          <div class="tag">Wi-Fi</div>
+          <div class="tag">HTTP Request</div>
+          <div class="tag">LED</div>
+
+        </div>
+
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-number">01</div>
+
+            <div>
+              <h4>Preparing the ESP32 & Exploring IFTTT</h4>
+
+              <p>
+                The ESP32 was programmed to connect to Wi-Fi
+                and listen for incoming requests. Separate
+                actions were configured for switching the
+                LED ON and OFF.
+              </p> <img src="/week7/p3/1.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">02</div>
+
+            <div>
+              <h4>Creating the IFTTT Applet</h4>
+
+              <p>
+                IFTTT was used to connect the voice command
+                with the ESP32. The basic workflow follows
+                the "If This, Then That" concept, where a
+                trigger produces a predefined action.
+              </p> <img src="/week7/p3/2.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">03</div>
+
+            <div>
+              <h4>Creating the Voice Trigger</h4>
+
+              <p>
+                A specific voice phrase was configured as
+                the trigger. When the voice command was
+                detected, the corresponding IFTTT applet
+                was activated.
+              </p> <img src="/week7/p3/3.png">
+            </div>
+          </div>
+
+
+
+
+          <div class="step">
+            <div class="step-number">04</div>
+
+            <div>
+              <h4>Adding Ada Fruit</h4>
+
+              <p>
+                The ESP32 received the request and identified
+                the command. Based on the received instruction,
+                it changed the GPIO state of the connected LED.
+              </p> <img src="/week7/p3/6.png">
+            </div>
+          </div>
+          
+          <div class="step">
+            <div class="step-number">05</div>
+
+            <div>
+              <h4>Configuring the Web Request</h4>
+
+              <p>
+                After receiving the voice trigger, IFTTT
+                sent a web request containing the required
+                command toward the ESP32.
+              </p> <img src="/week7/p3/7.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">06</div>
+
+            <div>
+              <h4>Creating the OFF Command</h4>
+
+              <p>
+                A separate IFTTT configuration was created
+                for switching the LED OFF. This demonstrated
+                how different voice triggers can be mapped
+                to different hardware actions.
+              </p> <img src="/week7/p3/8.png">
+            </div>
+          </div>
+
+
+          <div class="step">
+            <div class="step-number">07</div>
+
+            <div>
+              <h4>Testing and Debugging</h4>
+
+              <p>
+                The voice commands were tested and the ESP32
+                response was checked. This helped me understand
+                how to identify communication problems between
+                the voice trigger, IFTTT, web request, and
+                physical hardware.
+              </p> <img src="/week7/p3/9.png">
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="flow">
+
+          VOICE COMMAND
+          <span>→</span>
+          IFTTT
+          <span>→</span>
+          WEB REQUEST
+          <span>→</span>
+          ESP32
+          <span>→</span>
+          LED
+
+        </div>
+
+
+        <div class="result">
+
+          <strong>RESULT</strong>
+
+          Successfully developed a voice-controlled ESP32
+          system using IFTTT, where voice commands could
+          trigger actions on the physical LED.
+
+        </div>
+         <img src="week7/p3/10.jpeg"> <br>
+         <img src="week7/p3/11.jpeg">
+      </div>
+
+    </section>
+
+
+    <!-- RTOS -->
+
+    <section class="section">
+
+      <div class="section-label">
+        04 / Embedded Systems
+      </div>
+
+      <div class="rtos-box">
+
+        <h3>
+          Introduction to RTOS
+        </h3>
+
+        <p>
+          Alongside the IoT activities, I was introduced to
+          the fundamentals of Real-Time Operating Systems
+          (RTOS). I learned how an RTOS allows an embedded
+          system to manage multiple tasks in a structured
+          and time-aware manner. I also applied these
+          concepts through a small practical project.
+        </p>
+
+
+        <div class="rtos-list">
+
+          <div>Task Management</div>
+          <div>Task Scheduling</div>
+          <div>Concurrent Execution</div>
+          <div>Timing</div>
+          <div>Task Priorities</div>
+          <div>Resource Management</div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- KEY LEARNINGS -->
+
+    <section class="section">
+
+      <div class="section-label">
+        05 / Key Learnings
+      </div>
+
+      <h2>
+        What I Learned
+      </h2>
+
+      <div class="learning-grid">
+
+        <div class="learning">
+          ESP32 Programming
+        </div>
+
+        <div class="learning">
+          Arduino IDE
+        </div>
+
+        <div class="learning">
+          Wi-Fi Connectivity
+        </div>
+
+        <div class="learning">
+          Web Server Development
+        </div>
+
+        <div class="learning">
+          HTTP Communication
+        </div>
+
+        <div class="learning">
+          MQTT Communication
+        </div>
+
+        <div class="learning">
+          Adafruit IO
+        </div>
+
+        <div class="learning">
+          Cloud-Based IoT
+        </div>
+
+        <div class="learning">
+          IFTTT Automation
+        </div>
+
+        <div class="learning">
+          Voice-Controlled Hardware
+        </div>
+
+        <div class="learning">
+          RTOS Fundamentals
+        </div>
+
+        <div class="learning">
+          Hardware–Software Integration
+        </div>
+
+        <div class="learning">
+          IoT Debugging
+        </div>
+
+        <div class="learning">
+          Connected System Development
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- REFLECTION -->
+
+    <section class="section">
+
+      <div class="reflection">
+
+        <div class="section-label">
+          06 / Reflection
+        </div>
+
+        <h2>
+          From a Simple LED to an IoT System
+        </h2>
+
+        <p>
+          The biggest takeaway from Week 7 was understanding
+          that an IoT system is not just about programming a
+          microcontroller. It involves connecting hardware,
+          networks, software, cloud platforms, and user
+          interfaces into one working system.
+          <br><br>
+
+          Starting with a simple browser-controlled LED and
+          progressing toward cloud and voice-based control
+          gave me a practical understanding of how connected
+          devices can evolve into more intelligent and
+          automated systems.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- BACK TO PROTOSEM -->
+
+    <div class="back-section">
+
+      <a href="protosem.html" class="back-btn">
+        ← BACK TO PROTOSEM
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+      AATIF — UI/UX DESIGNER · FULL STACK DEVELOPER · FILMMAKER
+    </div>
+
+    <div>
+      © 2026
+    </div>
+
+  </footer>
+
+</body>
+</html>

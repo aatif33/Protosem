@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Week 04 — Laser Cutting | Aatif</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0a0a0a;
+  --text:#f5f5f5;
+  --muted:#999;
+  --yellow:#ffd400;
+  --border:#292929;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Inter",sans-serif;
+  line-height:1.7;
+}
+
+nav{
+  padding:20px 6%;
+  border-bottom:2px solid var(--border);
+}
+
+.nav-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+}
+
+.logo{
+  font-family:"IBM Plex Mono";
+  font-size:24px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-family:"IBM Plex Mono";
+  font-size:12px;
+}
+
+.hero{
+  max-width:1100px;
+  margin:auto;
+  padding:100px 6% 70px;
+}
+
+.label{
+  color:var(--yellow);
+  font-family:"IBM Plex Mono";
+  letter-spacing:2px;
+}
+
+h1{
+  font-family:"Space Grotesk";
+  font-size:clamp(60px,10vw,120px);
+  line-height:.9;
+  margin:25px 0;
+  text-transform:uppercase;
+}
+
+h1 span{color:var(--yellow)}
+
+.hero p{
+  max-width:700px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 6% 100px;
+}
+
+.section{
+  border-top:3px solid var(--yellow);
+  padding:55px 0;
+}
+
+h2{
+  font-family:"Space Grotesk";
+  font-size:36px;
+  margin-bottom:20px;
+}
+
+h3{
+  font-family:"Space Grotesk";
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+p{
+  color:#c8c8c8;
+  margin-bottom:18px;
+}
+
+.images{
+  margin-top:30px;
+}
+
+.images img{
+  width:100%;
+  display:block;
+  border:2px solid var(--border);
+  margin-bottom:8px;
+}
+
+.caption{
+  font-family:"IBM Plex Mono";
+  font-size:11px;
+  color:var(--muted);
+  text-transform:uppercase;
+  margin-bottom:30px;
+}
+
+.machine{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.info{
+  border:2px solid var(--border);
+  padding:25px;
+}
+
+.info strong{
+  color:var(--yellow);
+  font-family:"IBM Plex Mono";
+}
+
+.step{
+  border:2px solid var(--border);
+  padding:25px;
+  margin:20px 0;
+}
+
+.number{
+  color:var(--yellow);
+  font-family:"IBM Plex Mono";
+  font-size:13px;
+}
+
+.flow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin:35px 0;
+  font-family:"IBM Plex Mono";
+}
+
+.flow div{
+  border:2px solid var(--border);
+  padding:18px 25px;
+}
+
+.arrow{
+  color:var(--yellow);
+  font-size:25px;
+}
+
+.learn{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.learn div{
+  border:2px solid var(--border);
+  padding:20px;
+}
+
+.back{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 20px;
+  border:2px solid var(--yellow);
+  color:var(--yellow);
+  text-decoration:none;
+  font-family:"IBM Plex Mono";
+}
+
+footer{
+  border-top:2px solid var(--border);
+  padding:30px 6%;
+  display:flex;
+  justify-content:space-between;
+  font-family:"IBM Plex Mono";
+  font-size:11px;
+  color:var(--muted);
+}
+
+@media(max-width:700px){
+  .machine,
+  .learn{
+    grid-template-columns:1fr;
+  }
+
+  h2{font-size:30px}
+
+  .hero{
+    padding-top:70px;
+  }
+
+  nav a{
+    margin-left:10px;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="label">PROTOSEM / WEEK 04</div>
+
+  <h1>
+    LASER<br>
+    <span>CUTTING</span>
+  </h1>
+
+  <p>
+    How I learned to take a digital design and turn it into
+    a real physical object using a CO₂ laser cutter.
+  </p>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- WHAT IS LASER CUTTING -->
+
+<section class="section">
+
+  <h2>01 / What is Laser Cutting?</h2>
+
+  <p>
+    Laser cutting is a digital fabrication process where a
+    focused laser beam is used to cut or engrave a material.
+  </p>
+
+  <p>
+    Instead of manually cutting the design, we prepare the
+    design digitally and the machine follows those paths
+    automatically.
+  </p>
+
+  <div class="flow">
+
+    <div>DESIGN</div>
+    <span class="arrow">→</span>
+
+    <div>SOFTWARE</div>
+    <span class="arrow">→</span>
+
+    <div>LASER CUTTER</div>
+    <span class="arrow">→</span>
+
+    <div>PHYSICAL OBJECT</div>
+
+  </div>
+
+</section>
+
+
+<!-- MACHINE -->
+
+<section class="section">
+
+  <h2>02 / The Machine</h2>
+
+  <p>
+    In our lab, I worked with a <strong>1490 CO₂ Laser Cutter</strong>.
+    Before using it, I learned its basic operation and safety requirements.
+  </p>
+
+  <div class="machine">
+
+    <div class="info">
+      <strong>WORKING AREA</strong>
+      <p>1300 × 900 mm</p>
+    </div>
+
+    <div class="info">
+      <strong>LASER POWER</strong>
+      <p>150 W</p>
+    </div>
+
+    <div class="info">
+      <strong>ACCURACY</strong>
+      <p>0.1 mm</p>
+    </div>
+
+    <div class="info">
+      <strong>MATERIALS</strong>
+      <p>Acrylic, plywood, MDF, cardboard and paper</p>
+    </div>
+
+  </div>
+
+  <div class="images">
+    <img src="week4/1.png"
+         alt="1490 CO2 Laser Cutter">
+    <div class="caption">The CO₂ Laser Cutter used in the lab</div>
+  </div>
+
+</section>
+
+
+<!-- IMPORTANT CONCEPT -->
+
+<section class="section">
+
+  <h2>03 / One Important Thing I Learned</h2>
+
+  <p>
+    Laser cutting is not simply about pressing a button.
+    The <strong>speed and power of the laser</strong> affect the final result.
+  </p>
+
+  <p>
+    A slower speed generally allows the laser to cut deeper,
+    while a faster speed produces a shallower cut.
+    The correct settings also depend on the material and its thickness.
+  </p>
+
+  <div class="images">
+    <img src="week4/2.png"
+         alt="Laser speed and quality test">
+    <div class="caption">Speed, power and cut-quality experiment</div>
+  </div>
+
+</section>
+
+
+<!-- RDWORKS -->
+
+<section class="section">
+
+  <h2>04 / How Does the Machine Know What to Cut?</h2>
+
+  <p>
+    This is where <strong>RDWorks V8</strong> comes in.
+  </p>
+
+  <p>
+    RDWorks is the software I used to prepare the digital design
+    before sending it to the laser cutter.
+  </p>
+
+  <div class="info">
+
+    <p>In RDWorks, I learned to:</p>
+
+    <p>• Import the design</p>
+    <p>• Position the design</p>
+    <p>• Check the cutting paths</p>
+    <p>• Set laser parameters</p>
+    <p>• Decide which parts should be cut or engraved</p>
+    <p>• Send the final file to the machine</p>
+
+  </div>
+
+  <div class="images">
+    <img src="week4/3.png"
+         alt="RDWorks V8">
+    <div class="caption">Preparing the design in RDWorks V8</div>
+  </div>
+
+</section>
+
+
+<!-- MY PROCESS -->
+
+<section class="section">
+
+  <h2>05 / What Did I Actually Do?</h2>
+
+  <p>
+    Here is my complete process, explained step-by-step.
+  </p>
+
+
+  <div class="step">
+
+    <div class="number">STEP 01</div>
+
+    <h3>Choose the Design</h3>
+
+    <p>
+      I started with an image that I wanted to convert
+      into a laser-cut design.
+    </p>
+
+    <div class="images">
+      <img src="week4/4.png"
+           alt="Original design">
+    </div>
+
+  </div>
+
+
+  <div class="step">
+
+    <div class="number">STEP 02</div>
+
+    <h3>Convert it to DXF</h3>
+
+    <p>
+      The image was converted into DXF format so that
+      it could be used as CAD geometry.
+    </p>
+
+    <div class="images">
+      <img src="week4/9.png"
+           alt="DXF conversion">
+    </div>
+
+  </div>
+
+
+  <div class="step">
+
+    <div class="number">STEP 03</div>
+
+    <h3>Import into RDWorks</h3>
+
+    <p>
+      I imported the DXF design into RDWorks and checked
+      whether the geometry had transferred correctly.
+    </p>
+
+    <div class="images">
+      <img src="week4/5.png"
+           alt="Design imported into RDWorks">
+    </div>
+
+  </div>
+
+
+  <div class="step">
+
+    <div class="number">STEP 04</div>
+
+    <h3>Separate the Parts</h3>
+
+    <p>
+      I separated the different parts of the design so
+      that each section could be controlled individually.
+    </p>
+
+    <div class="images">
+      <img src="week4/6.png"
+           alt="Separated design">
+    </div>
+
+  </div>
+
+
+  <div class="step">
+
+    <div class="number">STEP 05</div>
+
+    <h3>Set Cut & Engrave</h3>
+
+    <p>
+      I selected the outer outline for cutting and the
+      internal details for scanning/engraving.
+    </p>
+
+    <div class="images">
+      <img src="week4/7.png"
+           alt="Cut and scan settings">
+    </div>
+
+  </div>
+
+
+  <div class="step">
+
+    <div class="number">STEP 06</div>
+
+    <h3>Send it to the Laser Cutter</h3>
+
+    <p>
+      After checking the paths and settings, I exported
+      the prepared file and sent it to the laser cutter.
+    </p>
+
+    <div class="images">
+      <img src="week4/8.png"
+           alt="Laser cutting process">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RESULT -->
+
+<section class="section">
+
+  <h2>06 / From Digital to Physical</h2>
+
+  <p>
+    The laser followed the paths prepared in RDWorks and
+    produced the design on the material.
+  </p>
+
+  <p>
+    This was the most interesting part for me — seeing a
+    design that existed digitally become an actual physical object.
+  </p>
+
+  <div class="images">
+    <img src="week4/11.png"
+         alt="Final laser cut output">
+    <div class="caption">Final physical laser-cut output</div>
+  </div>
+
+</section>
+
+
+<!-- LEARNINGS -->
+
+<section class="section">
+
+  <h2>07 / What I Learned</h2>
+
+  <div class="learn">
+
+    <div>
+      <strong>01</strong>
+      <p>How laser cutting works</p>
+    </div>
+
+    <div>
+      <strong>02</strong>
+      <p>How speed and power affect the result</p>
+    </div>
+
+    <div>
+      <strong>03</strong>
+      <p>How to prepare designs in RDWorks</p>
+    </div>
+
+    <div>
+      <strong>04</strong>
+      <p>How digital designs become physical objects</p>
+    </div>
+
+    <div>
+      <strong>05</strong>
+      <p>Basic machine safety and preparation</p>
+    </div>
+
+    <div>
+      <strong>06</strong>
+      <p>Understanding computer-controlled fabrication</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONCLUSION -->
+
+<section class="section">
+
+  <h2>08 / The Takeaway</h2>
+
+  <p>
+    Week 4 gave me my first practical experience with
+    laser cutting. I learned that the process starts long
+    before the laser turns on — the design, software,
+    parameters and machine settings all matter.
+  </p>
+
+  <p>
+    Most importantly, I learned how a digital idea can
+    move through a software workflow and finally become
+    a real physical product.
+  </p>
+
+  <a href="protosem.html" class="back">
+    ← BACK TO PROTOSEM
+  </a>
+
+</section>
+
+</div>
+
+
+<footer>
+  <div>AATIF — UI/UX DESIGNER · FULL STACK DEVELOPER · FILMMAKER</div>
+  <div>WEEK 04 / 2026</div>
+</footer>
+
+</body>
+</html>

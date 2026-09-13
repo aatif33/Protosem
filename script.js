@@ -85,44 +85,100 @@ Overall, Week 3 gave me a broader perspective on engineering by connecting CAD m
     { src: "week4-4.png", alt: "" },
     { src: "week4-5.png", alt: "" }
   ]
+},{
+  title: "Week 4 — Animation, Laser Cutting & 3D Printing",
+
+  summary: "Explored animation in Fusion 360, prepared a fidget spinner design for laser cutting using RDWorks, and learned the fundamentals of 3D printing with Bambu Lab.",
+
+  details: `Week 4 focused on exploring animation, digital fabrication, and 3D printing. I continued developing my skills in Fusion 360 and explored how digital designs can be transformed into physical prototypes.
+
+I created a water bottle animation in Fusion 360 to understand how animation can demonstrate the movement, functionality, and working of a product. I also created an assembly animation to show how different components come together and interact as part of a complete mechanical assembly. These activities helped me understand how motion can be used to communicate a design more effectively.
+
+I was also introduced to RDWorks, a software used for preparing designs for laser cutting. As a practical activity, I worked on a fidget spinner design and prepared it for laser cutting. Seeing the digital design converted into a physical object gave me practical exposure to digital fabrication and helped me understand the workflow from a digital file to a real-world prototype.
+
+Alongside laser cutting, I learned the basics of 3D printing using Bambu Lab. I was introduced to the process of preparing a 3D model for printing, including slicing and understanding basic print settings before starting the print.
+
+Overall, Week 4 helped me connect CAD modelling with animation, laser cutting, and additive manufacturing, giving me a better understanding of how digital designs can be communicated, fabricated, and transformed into physical products.`,
+
+  images: [
+    { src: "week04-1.png", alt: "Water Bottle Animation in Fusion 360" },
+    { src: "week04-2.png", alt: "Fidget Spinner Laser Cutting using RDWorks" },
+    { src: "week04-3.png", alt: "3D Printing using Bambu Lab" },
+    { src: "week04-4.png", alt: "3D Printing using Bambu Lab" }
+  ],
+  moreLink: "week4.html"
 },
-     {
-      title: "week 4 — In Progress",
-      summary: "",
-      details: "",
-      images: [
-        { src: " ", alt: "" },
-        { src: " ", alt: "" },
-        { src: " ", alt: "" }
-      ]
-    }, {
-      title: "week 5 — In Progress",
-      summary: "",
-      details: "",
-      images: [
-        { src: " ", alt: "" },
-        { src: " ", alt: "" },
-        { src: " ", alt: "" }
-      ]
-    }, {
-      title: "week 6 — In Progress",
-      summary: "",
-      details: "",
-      images: [
-        { src: " ", alt: "" },
-        { src: " ", alt: "" },
-        { src: " ", alt: "" }
-      ]
-    }, {
-      title: "week 7 — In Progress",
-      summary: "",
-      details: "",
-      images: [
-        { src: " ", alt: "" },
-        { src: " ", alt: "" },
-        { src: " ", alt: "" }
-      ]
-    }, {
+
+{
+  title: "Week 5 — UI/UX, Problem Statements & Market Exploration",
+
+  summary: "Explored the fundamentals of UI/UX design, participated in a marketplace session with clients and startups, and studied real-world problems to identify potential product opportunities.",
+
+  details: `Week 5 introduced me to the fundamentals of UI/UX design and helped me understand how user needs, usability, and problem discovery influence product development.
+
+As part of the learning process, we explored the basic principles of UI/UX and the importance of understanding users before developing a solution. This helped me look beyond just the visual appearance of a product and consider how users interact with a system and what problems they actually need solved.
+
+We also participated in a marketplace session where clients and startup companies presented real-world problem statements. This provided an opportunity to interact with industry-oriented challenges, understand different problem areas, and explore problems that could potentially be developed into practical solutions.
+
+Alongside this, we worked on user discovery and requirement understanding to identify the needs of target users. This experience helped me understand the importance of research, observation, requirement gathering, and problem definition before moving into the solution and design stages.
+
+Overall, Week 5 strengthened my understanding of UI/UX thinking and introduced me to the process of connecting real-world problems with potential product solutions.`,
+
+  images: [
+    { src: "week5-1.png", alt: "UI/UX Design Learning" },
+    { src: "week5-2.png", alt: "Marketplace Session with Clients and Startups" },
+    { src: "week5-3.png", alt: "User Discovery and Problem Identification" }
+  ]
+},
+
+{
+  title: "Week 6 — Microcontrollers, Embedded Systems & Soldering",
+
+  summary: "Learned the fundamentals of microcontrollers, microprocessors, and embedded systems while gaining hands-on experience with sensors, actuators, soldering, and electronic circuit assembly.",
+
+  details: `Week 6 focused on understanding microcontrollers, microprocessors, and the fundamentals of embedded systems. I explored the basic architecture and working principles of embedded systems and learned how electronic systems interact with the physical environment.
+
+As part of the learning process, I was introduced to sensors and actuators and their role in embedded applications. This helped me understand how systems can receive information from the environment and respond through physical actions.
+
+I also gained practical experience in soldering and desoldering electronic components. These activities improved my understanding of electronic hardware handling and helped me become more comfortable working with circuit boards and individual components.
+
+For the practical activity, I successfully soldered a 555 timer circuit using LEDs, resistors, and a capacitor. Building the circuit provided hands-on experience in understanding basic electronic connections and assembling components into a functional circuit.
+
+Overall, Week 6 connected the theoretical concepts of embedded systems with practical electronics work and strengthened my confidence in handling and assembling basic electronic circuits.`,
+
+  images: [
+    { src: "week6-1.jpeg", alt: "Microcontroller and Embedded Systems Learning" },
+    { src: "week6-2.jpeg", alt: "Soldering and Desoldering Practice" },
+    { src: "week6-3.jpeg", alt: "555 Timer Circuit with LEDs, Resistors and Capacitor" },
+    { src: "week6-4.jpeg", alt: "Microcontroller and Embedded Systems Learning" },
+    { src: "week6-5.jpeg", alt: "Soldering and Desoldering Practice" },
+    { src: "week6-6.jpeg", alt: "555 Timer Circuit with LEDs, Resistors and Capacitor" },
+  ]
+},
+
+{
+  title: "Week 7 — IoT, Connectivity & RTOS",
+
+  summary: "Developed connected applications using Arduino IDE and ESP32, explored web and cloud communication through four IoT tasks, and learned the fundamentals of Real-Time Operating Systems.",
+
+  details: `Week 7 focused on Internet of Things (IoT), connectivity, and Real-Time Operating Systems (RTOS). I worked with Arduino IDE and ESP32 to understand how hardware devices can communicate with web and cloud-based platforms.
+
+During the week, I completed four practical IoT tasks. These included web-based LED control, MQTT cloud communication, voice-based control, and a Firebase-powered smart home system. Each activity provided hands-on experience in connecting hardware with different software and cloud platforms.
+
+The web-based LED control task helped me understand how an ESP32 can be controlled through a web interface. MQTT introduced me to cloud-based messaging and device communication, while the voice-control activity demonstrated how voice commands can be integrated with an IoT device. The Firebase smart home activity further explored how connected devices can interact with a cloud-based platform.
+
+I was also introduced to the fundamentals of Real-Time Operating Systems (RTOS). I learned the basic concepts of tasks, scheduling, and real-time execution and applied these concepts by developing a small project.
+
+Overall, Week 7 strengthened my understanding of IoT communication, ESP32 development, cloud connectivity, voice-based control, and RTOS concepts. It also gave me practical experience in building connected systems where hardware, software, and cloud services work together.`,
+
+  images: [
+    { src: "week7-1.png", alt: "ESP32 and Arduino IDE IoT Development" },
+    { src: "week7-2.png", alt: "IoT Connectivity and Smart Home Tasks" },
+    { src: "week7-3.jpeg", alt: "RTOS Practical Project" }
+  ],
+
+  moreLink: "week7.html"
+}, {
       title: "week 8 — In Progress",
       summary: "",
       details: "",
@@ -267,8 +323,14 @@ Overall, Week 3 gave me a broader perspective on engineering by connecting CAD m
             <h4>WEEK ${idx} INSIGHTS</h4>
             <p>${weekData.details}</p>
             <div class="card-images">
-              ${imagesHTML}
-            </div>
+  ${imagesHTML}
+</div>
+
+${weekData.moreLink ? `
+  <a href="${weekData.moreLink}" class="week-more-btn"  rel="noopener noreferrer">
+    MORE →
+  </a>
+` : ""}
           </div>
         </div>
       </div>
